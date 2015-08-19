@@ -40,6 +40,10 @@ public class Hfp_indexActivity extends ListActivity {
 
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
-        startActivity(new Intent().setClass(this, DetailListActivity.class));
+        startActivity(
+                new Intent()
+                        .setClass(this, DetailListActivity.class)
+                        .putExtra("tag", getListAdapter().getItem(position).toString())
+        );
     }
 }

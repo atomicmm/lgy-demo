@@ -1,6 +1,7 @@
 package com.example.lgy;
 
 import com.google.common.base.Objects;
+import com.google.common.collect.Lists;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,7 @@ public class Item {
     private String name;//名字
     private String iconPath;//图片路径
     private String finalDate;//过期时间
-    private List<String> tags = new ArrayList<String>();//标签们
+    private List<String> tags = Lists.newArrayList();//标签们
 
     public Item() {
     }
