@@ -42,6 +42,7 @@
                 android:name="com.example.lgy.DetailListActivity"
                 android:label="@string/title_activity_detail" >
         </activity>
+        <activity android:name=".DetailActivity"/>
     </application>
 
 </manifest>
