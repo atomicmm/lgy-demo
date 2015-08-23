@@ -18,7 +18,7 @@ import java.util.List;
  * @author Atomic
  */
 public class JsonRepository {
-    private static final String REPO_NAME = "repo.json";
+    private static final String REPO_NAME = "data.json";
 
     private static JsonRepository sInstance;
 
@@ -35,6 +35,31 @@ public class JsonRepository {
 
         return sInstance;
     }
+
+    /**
+     * 根据id查询
+     */
+    public Item findById(String id) {
+        try {
+            List<Item> source = loadFromFileStore();
+
+            Item temp = new Item();
+            temp.setId(id);
+
+            int index = source.indexOf(temp);
+            if (index == -1) {
+                return null;
+            }
+
+            return source.get(index);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
 
     /**
      * 根据tags
@@ -59,7 +84,7 @@ public class JsonRepository {
      * 从文件系统中加载数据
      */
     private List<Item> loadFromFileStore() throws IOException {
-        File root = mContextHolder.getFilesDir();
+        File root = mContextHolder.getExternalFilesDir(null);
 
         File target = new File(root, REPO_NAME);
 

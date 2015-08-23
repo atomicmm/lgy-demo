@@ -17,16 +17,57 @@ public class Item {
     private String iconPath;//图片路径
     private String finalDate;//过期时间
     private List<String> tags = Lists.newArrayList();//标签们
+    private String size;
+    private int quantity;
+    private String buytime;
+    private String description;
 
     public Item() {
     }
 
-    public Item(String finalDate, String iconPath, String id, String name, List<String> tags) {
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getBuytime() {
+        return buytime;
+    }
+
+    public void setBuytime(String buytime) {
+        this.buytime = buytime;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Item(String finalDate, String iconPath, String id, String name, List<String> tags,String size,int quantity,String buytime,String description) {
         this.finalDate = finalDate;
         this.iconPath = iconPath;
         this.id = id;
         this.name = name;
+
         this.tags = tags;
+        this.size =size;
+        this.quantity =quantity;
+        this.buytime =buytime;
+        this.description =description;
     }
 
     public String getId() {
@@ -92,6 +133,10 @@ public class Item {
         this.iconPath = item.iconPath;
         this.name = item.name;
         this.tags = item.tags;
+        this.description =item.description;
+        this.buytime =item.buytime;
+        this.quantity =item.quantity;
+        this.size =item.size;
     }
 
 }

@@ -11,5 +11,10 @@ public class DetailActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail);
+
+        String id = getIntent().getStringExtra("id");
+        Item item = JsonRepository.getInstance(this).findById(id);
+
+
     }
 }
